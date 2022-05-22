@@ -98,7 +98,7 @@
  
  .centered {
    position: absolute;
-   top: 75%;
+   top: 85%;
    left: 50%;
    transform: translate(-50%, -50%);
    width: 100%;
@@ -107,8 +107,8 @@
    position: relative;
    text-align: center;
    color: white;
-   width: 500px;
-   height: 500px;
+   width: 100%;
+   height: 100%;
  }
  #websitetxt{
      font-size: 20px;
@@ -208,7 +208,7 @@
                               </div>
                               <div class="col-md-6">
                                 <section id="test-result">
-                                  <div><img src="" id="screenshot" height="500px"></div>
+                                  <div><img src="" id="screenshot"></div>
                                 </section>
                               </div>
                         </div>
@@ -227,6 +227,7 @@
 <script>
       
     $(function() {
+      $('.centered').hide();
         var d = new Date();
         var hours = d.getHours();
         var message = hours < 12 ? 'प्रातः दर्शन' : 'संध्या दर्शन';
@@ -242,6 +243,7 @@
         imgInp.onchange = evt => {
   const [file] = imgInp.files
   if (file) {
+    $('.centered').show();
     mainimg.src = URL.createObjectURL(file)
   }
 }
