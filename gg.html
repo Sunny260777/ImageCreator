@@ -67,7 +67,7 @@
  
  p {
      margin-top: 0px !important;
-     margin-bottom: 7px !important;
+     margin-bottom: 0px !important;
  }
  
  a:focus {
@@ -93,12 +93,10 @@
      color: #77f4f4;
      font-weight: 700;
  }
- 
- 
- 
+
  .centered {
    position: absolute;
-   top: 85%;
+   top: 83%;
    left: 50%;
    transform: translate(-50%, -50%);
    width: 100%;
@@ -119,30 +117,32 @@
      text-shadow: 1px 1px #000000;
  }
  #tagtxt{
-     font-size: 22px;
-     color: yellow;
-     font-weight: 900;
-     -webkit-text-stroke: 1px #efd014;
-     text-shadow: 3px 1px #000000;
+  font-size: 22px;
+    color: #efd014;
+    font-weight: 900;
+    -webkit-text-stroke: 1px #efd014;
+    text-shadow: 3px 0px 7px #000000, -3px 0px 7px #000000, 0px 4px 7px #000000;
  }
  .footertxt{
-    font-size: 13px;
-    color: yellow;
+  font-size: 13px;
+    color: #ffdb00;
     font-weight: 300;
-    -webkit-text-stroke: 1px #efd014;
-    text-shadow: 0px 0px #000000;
+    -webkit-text-stroke: 1px #ffdb00;
+    text-shadow: 3px 0px 7px #000000, -3px 0px 7px #000000, 0px 4px 7px #000000;
  }
  #datetxt{
-    color: #c3fcea;
+  color: #2edaa3;
     -webkit-text-stroke: 1px #2edaa3;
-    text-shadow: 2px 2px #000000;
+    font-weight: 900;
+    text-shadow: 3px 0px 7px #000000, -3px 0px 7px #000000, 0px 4px 7px #000000;
  }
  #mndtxt{
-     font-size: 30px;
-     color: white;
-     font-weight: 900;
-     -webkit-text-stroke: 1px #e014ef;
-     text-shadow: 3px 1px #000000;
+  font-size: 30px;
+    color: white;
+    font-weight: 900;
+    
+    
+    text-shadow: 3px 0px 7px #200dff, -3px 0px 7px #200dff, 0px 4px 7px #200dff;
      
  }
  .bottom-right {
@@ -150,7 +150,6 @@
    bottom: 0px;
    right: 0px;
    width: 100%;
-    background-color: #ff00c8;
  }
  .bottom-left {
   position: absolute;
@@ -193,11 +192,11 @@
                                       <div class="centered">
                                       <!-- <p><span id="websitetxt">www.shreeshyammandir.com</span></p> -->
                           
-                                          <p><span id="tagtxt">मेरा सर्वेश्वर मेरा श्याम</span></p>
+                                          <p><span id="tagtxt">!! मेरा सर्वेश्वर मेरा श्याम !!</span></p>
                           
-                                          <p style="font-size: 35px;font-weight: bold;">
-                                              <span id="timetxt" style="color: #e0a4c2;padding-right: 30px;-webkit-text-stroke: 1px #f20279;text-shadow: 2px 2px #000000;"></span>
-                                               <span id="datetxt"></span>
+                                          <p style="font-size: 30px;font-weight: bold;">
+                                              <span id="timetxt" style="color: #f20279;padding-right: 30px;-webkit-text-stroke: 1px #f20279;text-shadow: 3px 0px 7px #000000, -3px 0px 7px #000000, 0px 4px 7px #000000;"></span>
+                                               <br/><span id="datetxt"></span>
                                               </p>
                                       <p><span id="mndtxt">श्री श्याम मंदिर सरायपाली <br/> (अर्जुन्दा धाम)</span></p>
                                       
@@ -231,6 +230,7 @@
       
     $(function() {
       $('.centered').hide();
+      $('.footertxt').hide()
         var d = new Date();
         var hours = d.getHours();
         var message = hours < 12 ? 'प्रातः दर्शन' : 'संध्या दर्शन';
@@ -247,6 +247,7 @@
   const [file] = imgInp.files
   if (file) {
     $('.centered').show();
+    $('.footertxt').show()
     mainimg.src = URL.createObjectURL(file)
   }
 }
