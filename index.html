@@ -109,7 +109,7 @@
    height: 100%;
  }
  #websitetxt{
-     font-size: 20px;
+     font-size: 1.1rem;
      color: #75e3f3;
      font-weight: 600;
      
@@ -117,14 +117,14 @@
      text-shadow: 1px 1px #000000;
  }
  #tagtxt{
-  font-size: 22px;
+  font-size: 1.5rem;
     color: #efd014;
     font-weight: 900;
     -webkit-text-stroke: 1px #efd014;
     text-shadow: 3px 0px 7px #000000, -3px 0px 7px #000000, 0px 4px 7px #000000;
  }
  .footertxt{
-  font-size: 13px;
+  font-size: 0.8rem;
     color: #ffdb00;
     font-weight: 300;
     -webkit-text-stroke: 1px #ffdb00;
@@ -137,7 +137,7 @@
     text-shadow: 3px 0px 7px #000000, -3px 0px 7px #000000, 0px 4px 7px #000000;
  }
  #mndtxt{
-  font-size: 30px;
+  font-size: 1.8rem;
     color: white;
     font-weight: 900;
     
@@ -156,6 +156,23 @@
   bottom: 8px;
   left: 16px;
 }
+#sch{
+  font-size: 1.5rem;font-weight: bold;
+
+}
+
+@media (max-width: 768px) {
+  #tagtxt {
+    font-size: 1.1rem;
+  }
+  #mndtxt {
+    font-size: 1rem;
+  }
+  #sch{
+  font-size: 1.1rem;
+
+}
+ }
  </style>
 </head>
 <body>
@@ -182,7 +199,7 @@
                                       <div class="top-right">instagram.com/arjundadhamofficial</div> -->
                                       
                                       <div class="bottom-right">
-                                         <span class="footertxt"> श्री श्याम सेवा समिति सरायपाली (रजी.)
+                                         <span class="footertxt"> श्री श्याम सेवा समिति सरायपाली (रेजि.)
                                          
                                          </span>
                                          
@@ -194,8 +211,8 @@
                           
                                           <p><span id="tagtxt">!! मेरा सर्वेश्वर मेरा श्याम !!</span></p>
                           
-                                          <p style="font-size: 30px;font-weight: bold;">
-                                              <span id="timetxt" style="color: #f20279;padding-right: 30px;-webkit-text-stroke: 1px #f20279;text-shadow: 3px 0px 7px #000000, -3px 0px 7px #000000, 0px 4px 7px #000000;"></span>
+                                          <p id="sch">
+                                              <span id="timetxt" style="color: #f20279;-webkit-text-stroke: 1px #f20279;text-shadow: 3px 0px 7px #000000, -3px 0px 7px #000000, 0px 4px 7px #000000;"></span>
                                                <br/><span id="datetxt"></span>
                                               </p>
                                       <p><span id="mndtxt">श्री श्याम मंदिर सरायपाली <br/> (अर्जुन्दा धाम)</span></p>
@@ -210,7 +227,7 @@
                               </div>
                               <div class="col-md-6">
                                 <section id="test-result">
-                                  <div><img src="" id="screenshot"></div>
+                                  <div><img src="" id="screenshot" width="100%" height="100%"></div>
                                 </section>
                               </div>
                         </div>
