@@ -185,7 +185,7 @@
                 <input accept="image/*" type='file' id="imgInp" />
             </div>
             <div class="col-md-12">
-              <button onclick="javascript:generateScreenshot()">Convert to JPEG</button>
+              <button onclick="javascript:test()">Convert to JPEG</button>
             </div>
             <div class="col-md-12">
                 <div class="card">
@@ -245,7 +245,7 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" ></script>
-<script src="assets/js/html2canvas.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
 <script>
       
     $(function() {
@@ -274,21 +274,24 @@
     
     })
     
-          function generateScreenshot() {
-        document.getElementById("the-link").focus();
-        setTimeout(() => {
-        html2canvas(document.getElementById('screen'), {
-                logging: true,
-                profile: true,
-                useCORS: true}).then(function(canvas) {
-            var data = canvas.toDataURL('image/jpeg', 0.9);
-            var src = encodeURI(data);
-            document.getElementById('screenshot').src = src;
-            
-        }); }, 1000);
-    }
     
-    
-    
+    function test() {
+            var node = document.getElementById('screen');
+            domtoimage.toPng(node)
+                .then(function (dataUrl) {
+                    var img = new Image();
+                    img.src = dataUrl;
+                    document.body.appendChild(img);
+
+                    var link = document.createElement('a');
+                    link.download = 'my-image-name.png';
+                    link.href = dataUrl;
+                    link.click();
+                })
+                .catch(function (error) {
+                    console.error('oops, something went wrong!', error);
+                });
+
+        }
       </script>
 </html>
